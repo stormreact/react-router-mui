@@ -5,6 +5,9 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../withRoot';
 
+import { BrowserRouter } from 'react-router-dom'
+import App from './../components/App';
+
 const styles = theme => ({
   root: {
     textAlign: 'center',
@@ -28,6 +31,11 @@ class Index extends React.Component {
         <Button raised color="accent" onClick={this.handleClick}>
           Super Secret Password
         </Button>
+
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+
       </div>
     );
   }
