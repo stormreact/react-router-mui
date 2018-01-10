@@ -133,7 +133,6 @@ class PersistentDrawer extends React.Component {
           <Divider />
             <ListItem className={classes.navLink} disableGutters>
               <Button
-                variant="button"
                 href='/'
               >
                 MyTitle
