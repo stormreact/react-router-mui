@@ -163,15 +163,6 @@ class PersistentDrawer extends React.Component {
       </Drawer>
     );
 
-    let before = null;
-    let after = null;
-
-    if (anchor === 'left') {
-      before = drawer;
-    } else {
-      after = drawer;
-    }
-
     return (
       <div className={classes.root}>
         <div className={classes.appFrame}>
@@ -195,7 +186,7 @@ class PersistentDrawer extends React.Component {
               </Typography>
             </Toolbar>
           </AppBar>
-          {before}
+          {drawer}
           <main
             className={classNames(classes.content, classes[`content-${anchor}`], {
               [classes.contentShift]: open,
@@ -204,7 +195,7 @@ class PersistentDrawer extends React.Component {
           >
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
           </main>
-          {after}
+
         </div>
       </div>
     );
