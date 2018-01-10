@@ -5,14 +5,19 @@ import classNames from 'classnames';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import List from 'material-ui/List';
+
+//import { Link } from 'react-router-dom'
+import Button from 'material-ui/Button';
+//import { List, ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import { ListItem } from 'material-ui/List';
+
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import ChevronRightIcon from 'material-ui-icons/ChevronRight';
-import { mailFolderListItems, otherMailFolderListItems } from './tileData';
+//import { mailFolderListItems, otherMailFolderListItems } from './tileData';
 
 const drawerWidth = 240;
 
@@ -141,9 +146,19 @@ class PersistentDrawer extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <List className={classes.list}>{mailFolderListItems}</List>
-          <Divider />
-          <List className={classes.list}>{otherMailFolderListItems}</List>
+
+            <ListItem className={classes.navLink} disableGutters>
+              <Button
+                variant="button"
+                href='/'
+              >
+                MyTitle
+              </Button>
+            </ListItem>
+
+
+
+
         </div>
       </Drawer>
     );
