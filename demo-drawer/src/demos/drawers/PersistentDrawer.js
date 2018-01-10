@@ -52,9 +52,6 @@ const styles = theme => ({
   'appBarShift-left': {
     marginLeft: drawerWidth,
   },
-  'appBarShift-right': {
-    marginRight: drawerWidth,
-  },
   menuButton: {
     marginLeft: 12,
     marginRight: 20,
@@ -115,7 +112,6 @@ const styles = theme => ({
 class PersistentDrawer extends React.Component {
   state = {
     open: false,
-    anchor: 'left',
   };
 
   handleDrawerOpen = () => {
@@ -128,7 +124,7 @@ class PersistentDrawer extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
-    const { anchor, open } = this.state;
+    const { open } = this.state;
 
     const drawer = (
       <Drawer
@@ -136,7 +132,6 @@ class PersistentDrawer extends React.Component {
         classes={{
           paper: classes.drawerPaper,
         }}
-        anchor={anchor}
         open={open}
       >
         <div className={classes.drawerInner}>
@@ -146,7 +141,6 @@ class PersistentDrawer extends React.Component {
             </IconButton>
           </div>
           <Divider />
-
             <ListItem className={classes.navLink} disableGutters>
               <Button
                 variant="button"
@@ -155,10 +149,6 @@ class PersistentDrawer extends React.Component {
                 MyTitle
               </Button>
             </ListItem>
-
-
-
-
         </div>
       </Drawer>
     );
@@ -169,7 +159,7 @@ class PersistentDrawer extends React.Component {
           <AppBar
             className={classNames(classes.appBar, {
               [classes.appBarShift]: open,
-              [classes[`appBarShift-${anchor}`]]: open,
+              [classes[`appBarShift-left`]]: open,
             })}
           >
             <Toolbar disableGutters={!open}>
@@ -188,9 +178,9 @@ class PersistentDrawer extends React.Component {
           </AppBar>
           {drawer}
           <main
-            className={classNames(classes.content, classes[`content-${anchor}`], {
+            className={classNames(classes.content, classes[`content-left`], {
               [classes.contentShift]: open,
-              [classes[`contentShift-${anchor}`]]: open,
+              [classes[`contentShift-left`]]: open,
             })}
           >
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
