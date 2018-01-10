@@ -6,9 +6,7 @@ import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import List from 'material-ui/List';
-import { MenuItem } from 'material-ui/Menu';
 import Typography from 'material-ui/Typography';
-import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
@@ -123,12 +121,6 @@ class PersistentDrawer extends React.Component {
     this.setState({ open: false });
   };
 
-  handleChangeAnchor = event => {
-    this.setState({
-      anchor: event.target.value,
-    });
-  };
-
   render() {
     const { classes, theme } = this.props;
     const { anchor, open } = this.state;
@@ -167,17 +159,6 @@ class PersistentDrawer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <TextField
-          id="persistent-anchor"
-          select
-          label="Anchor"
-          value={anchor}
-          onChange={this.handleChangeAnchor}
-          margin="normal"
-        >
-          <MenuItem value="left">left</MenuItem>
-          <MenuItem value="right">right</MenuItem>
-        </TextField>
         <div className={classes.appFrame}>
           <AppBar
             className={classNames(classes.appBar, {
