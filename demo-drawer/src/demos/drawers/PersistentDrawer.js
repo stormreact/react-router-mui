@@ -92,9 +92,6 @@ const styles = theme => ({
   'content-left': {
     marginLeft: -drawerWidth,
   },
-  'content-right': {
-    marginRight: -drawerWidth,
-  },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
@@ -103,9 +100,6 @@ const styles = theme => ({
   },
   'contentShift-left': {
     marginLeft: 0,
-  },
-  'contentShift-right': {
-    marginRight: 0,
   },
 });
 
