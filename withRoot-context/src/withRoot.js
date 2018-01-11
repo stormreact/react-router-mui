@@ -139,7 +139,6 @@ function withRoot(Component) {
   }
 
   WithRoot.propTypes = {
-    pageContext: PropTypes.object,
     url: PropTypes.object,
   };
 
