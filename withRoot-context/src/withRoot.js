@@ -29,8 +29,73 @@ const jss = create(jssPreset());
 // It's optional.
 const generateClassName = createGenerateClassName();
 
+const pages = [
+  {
+    pathname: '/ch1',
+    children: [
+      {
+        pathname: '/sec1',
+        title: 'Chapter 1, Section 1',
+      },
+      {
+        pathname: '/sec2',
+        title: 'Chapter 1, Section 2',
+      },
+      {
+        pathname: '/sec3',
+        title: 'Chapter 1, Section 3',
+      },
+    ],
+  },
+  {
+    pathname: '/ch2',
+    children: [
+      {
+        pathname: '/sec1',
+        title: 'Chapter 2, Section 1',
+      },
+      {
+        pathname: '/sec2',
+        title: 'Chapter 2, Section 2',
+      },
+      {
+        pathname: '/sec3',
+        title: 'Chapter 2, Section 3',
+      },
+    ],
+  },
+  {
+    pathname: '/chapter3',
+    children: [
+      {
+        pathname: '/sec1',
+        title: 'Chaper 3, Section 1',
+      },
+      {
+        pathname: '/sec2',
+        title: 'Chapter 3, Section 2',
+      },
+      {
+        pathname: '/sec3',
+        title: 'Chapter 3, Section 3',
+      },
+    ],
+  },
+  {
+    pathname: '/',
+    title: false,
+  },
+];
+
+
 function withRoot(Component) {
   class WithRoot extends React.Component {
+
+    getChildContext() {
+      return {
+        pages,
+      };
+    }
 
     render() {
       const { ...other } = this.props;
@@ -51,7 +116,6 @@ function withRoot(Component) {
 
   WithRoot.childContextTypes = {
     pages: PropTypes.array,
-    activePage: PropTypes.object,
   };
 
   return WithRoot;
