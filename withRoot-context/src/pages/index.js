@@ -17,6 +17,8 @@ class Index extends React.Component {
   render() {
     const { classes } = this.props;
 
+    console.log(this.context.activePage);
+
     return (
       <div className={classes.root}>
         <Typography type="display1" gutterBottom>
@@ -35,6 +37,10 @@ class Index extends React.Component {
 
 Index.propTypes = {
   classes: PropTypes.object.isRequired,
+};
+
+Index.contextTypes = {
+  activePage: PropTypes.object.isRequired,
 };
 
 export default withRoot(withStyles(styles)(Index));
