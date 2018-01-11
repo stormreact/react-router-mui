@@ -116,6 +116,7 @@ function withRoot(Component) {
 
   WithRoot.childContextTypes = {
     pages: PropTypes.array,
+    activePage: PropTypes.object,
   };
 
   return WithRoot;
