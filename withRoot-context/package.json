@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "jss": "latest",
+    "lodash": "latest",    
     "material-ui": "next",
     "prop-types": "latest",
     "react": "latest",
