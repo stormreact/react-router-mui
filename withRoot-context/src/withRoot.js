@@ -113,6 +113,14 @@ function findActivePage(currentPages, url) {
 function withRoot(Component) {
   class WithRoot extends React.Component {
 
+    static defaultProps = {
+      url : {
+              query: {},
+              pathname: "/",
+              asPath: "/"
+      },
+    };
+
     getChildContext() {
       return {
         url: this.props.url ? this.props.url : null,
