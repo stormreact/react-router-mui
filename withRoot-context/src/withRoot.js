@@ -59,14 +59,10 @@ const pages = [
         pathname: '/sec2',
         title: 'Chapter 2, Section 2',
       },
-      {
-        pathname: '/sec3',
-        title: 'Chapter 2, Section 3',
-      },
     ],
   },
   {
-    pathname: '/chapter3',
+    pathname: '/ch3',
     children: [
       {
         pathname: '/sec1',
@@ -107,6 +103,8 @@ function findActivePage(currentPages, url) {
     return findActivePage(activePage.children, url);
   }
 
+  console.log(activePage);
+
   return activePage;
 }
 
@@ -115,9 +113,7 @@ function withRoot(Component) {
 
     static defaultProps = {
       url : {
-              query: {},
-              pathname: "/",
-              asPath: "/"
+        pathname: "/ch2",
       },
     };
 
