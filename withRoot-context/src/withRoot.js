@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { create } from 'jss';
 import JssProvider from 'react-jss/lib/JssProvider';
 import {
@@ -29,19 +30,26 @@ const jss = create(jssPreset());
 const generateClassName = createGenerateClassName();
 
 function withRoot(Component) {
-  function WithRoot(props) {
+  class WithRoot extends React.Component {
+    constructor(props, context) {
+      super(props, context);
+    }
+
+    render() {
+      const { ...other } = this.props;
     // JssProvider allows customizing the JSS styling solution.
-    return (
-      <JssProvider jss={jss} generateClassName={generateClassName}>
-        {/* MuiThemeProvider makes the theme available down the React tree
-          thanks to React context. */}
-        <MuiThemeProvider theme={theme}>
-          {/* Reboot kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <Reboot />
-          <Component {...props} />
-        </MuiThemeProvider>
-      </JssProvider>
-    );
+       return (
+        <JssProvider jss={jss} generateClassName={generateClassName}>
+          {/* MuiThemeProvider makes the theme available down the React tree
+            thanks to React context. */}
+          <MuiThemeProvider theme={theme}>
+            {/* Reboot kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <Reboot />
+            <Component {...other} />
+          </MuiThemeProvider>
+        </JssProvider>
+      );
+    }
   }
 
   return WithRoot;
