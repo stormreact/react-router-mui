@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import find from 'lodash/find';
 import { create } from 'jss';
 import JssProvider from 'react-jss/lib/JssProvider';
 import {
@@ -87,13 +88,36 @@ const pages = [
   },
 ];
 
+function findActivePage(currentPages, url) {
+  const activePage = find(currentPages, page => {
+    if (page.children) {
+      return url.pathname.indexOf(page.pathname) === 0;
+    }
+
+    // Should be an exact match if no children
+    return url.pathname === page.pathname;
+  });
+
+  if (!activePage) {
+    return null;
+  }
+
+  // We need to drill down
+  if (activePage.pathname !== url.pathname) {
+    return findActivePage(activePage.children, url);
+  }
+
+  return activePage;
+}
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
 
     getChildContext() {
       return {
+        url: this.props.url ? this.props.url : null,
         pages,
+        activePage: findActivePage(pages, this.props.url),
       };
     }
 
@@ -114,7 +138,13 @@ function withRoot(Component) {
     }
   }
 
+  WithRoot.propTypes = {
+    pageContext: PropTypes.object,
+    url: PropTypes.object,
+  };
+
   WithRoot.childContextTypes = {
+    url: PropTypes.object,
     pages: PropTypes.array,
     activePage: PropTypes.object,
   };
