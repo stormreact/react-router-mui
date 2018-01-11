@@ -31,9 +31,6 @@ const generateClassName = createGenerateClassName();
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
-    constructor(props, context) {
-      super(props, context);
-    }
 
     render() {
       const { ...other } = this.props;
@@ -51,6 +48,11 @@ function withRoot(Component) {
       );
     }
   }
+
+  WithRoot.childContextTypes = {
+    pages: PropTypes.array,
+    activePage: PropTypes.object,
+  };
 
   return WithRoot;
 }
