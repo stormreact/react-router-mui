@@ -3,22 +3,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import NProgress from 'nprogress';
-import Router from 'next/router';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import IconButton from 'material-ui/IconButton';
-import Tooltip from 'material-ui/Tooltip';
+//import Tooltip from 'material-ui/Tooltip';
 import MenuIcon from 'material-ui-icons/Menu';
-import LightbulbOutline from 'material-ui-icons/LightbulbOutline';
-import FormatTextdirectionLToR from 'material-ui-icons/FormatTextdirectionLToR';
-import FormatTextdirectionRToL from 'material-ui-icons/FormatTextdirectionRToL';
-import Github from 'docs/src/modules/components/GitHub';
-import AppDrawer from 'docs/src/modules/components/AppDrawer';
-import AppSearch from 'docs/src/modules/components/AppSearch';
-import { pageToTitle } from 'docs/src/modules/utils/helpers';
-import actionTypes from 'docs/src/modules/redux/actionTypes';
+//import LightbulbOutline from 'material-ui-icons/LightbulbOutline';
+//import FormatTextdirectionLToR from 'material-ui-icons/FormatTextdirectionLToR';
+//import FormatTextdirectionRToL from 'material-ui-icons/FormatTextdirectionRToL';
+import AppDrawer from './AppDrawer';
+import { pageToTitle } from './../utils/helpers';
+import actionTypes from './../redux/actionTypes';
 
 // Disaply a progress bar between route transitions
 NProgress.configure({
@@ -29,18 +26,6 @@ NProgress.configure({
     </div>
   `,
 });
-
-Router.onRouteChangeStart = () => {
-  NProgress.start();
-};
-
-Router.onRouteChangeComplete = () => {
-  NProgress.done();
-};
-
-Router.onRouteChangeError = () => {
-  NProgress.done();
-};
 
 const styles = theme => ({
   '@global': {
@@ -159,7 +144,7 @@ class AppFrame extends React.Component {
   };
 
   render() {
-    const { children, classes, uiTheme } = this.props;
+    const { children, classes } = this.props;
     const title =
       this.context.activePage.title !== false ? pageToTitle(this.context.activePage) : null;
 
@@ -194,43 +179,6 @@ class AppFrame extends React.Component {
               </Typography>
             )}
             <div className={classes.grow} />
-            <AppSearch />
-            <Tooltip id="appbar-theme" title="Toggle light/dark theme" enterDelay={300}>
-              <IconButton
-                color="contrast"
-                onClick={this.handleTogglePaletteType}
-                aria-labelledby="appbar-theme"
-              >
-                <LightbulbOutline />
-              </IconButton>
-            </Tooltip>
-            <Tooltip
-              id="appbar-direction"
-              title="Toggle right-to-left/left-to-right"
-              enterDelay={300}
-            >
-              <IconButton
-                color="contrast"
-                onClick={this.handleToggleDirection}
-                aria-labelledby="appbar-direction"
-              >
-                {uiTheme.direction === 'rtl' ? (
-                  <FormatTextdirectionLToR />
-                ) : (
-                  <FormatTextdirectionRToL />
-                )}
-              </IconButton>
-            </Tooltip>
-            <Tooltip id="appbar-github" title="Material-UI GitHub repo" enterDelay={300}>
-              <IconButton
-                component="a"
-                color="contrast"
-                href="https://github.com/mui-org/material-ui"
-                aria-labelledby="appbar-github"
-              >
-                <Github />
-              </IconButton>
-            </Tooltip>
           </Toolbar>
         </AppBar>
         <AppDrawer

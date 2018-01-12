@@ -4,7 +4,8 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../withRoot';
-import AppDrawer from './../components/AppDrawer'
+//import AppDrawer from './../components/AppDrawer'
+import AppFrame from './../components/AppFrame'
 
 const styles = theme => ({
   root: {
@@ -27,6 +28,7 @@ class Index extends React.Component {
 
     return (
       <div className={classes.root}>
+      <AppFrame>
         <Typography type="display1" gutterBottom>
           Material-UI
         </Typography>
@@ -36,6 +38,7 @@ class Index extends React.Component {
         <Button raised color="accent" onClick={this.handleClick}>
           Super Secret Password
         </Button>
+      </AppFrame>
       </div>
     );
   }
