@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "jss": "latest",
+    "jss-rtl": "^0.2.1",
+
     "lodash": "latest",
     "material-ui": "next",
     "material-ui-icons": "1.0.0-beta.17",
-    "nprogress": "^0.2.0",    
+    "nprogress": "^0.2.0",
+    "prismjs": "^1.8.4",    
     "prop-types": "15.6.0",
     "react": "latest",
     "react-dom": "latest",

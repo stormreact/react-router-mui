@@ -1,4 +1,4 @@
-import actionTypes from 'docs/src/modules/redux/actionTypes';
+import actionTypes from './actionTypes';
 
 const initialState = {
   paletteType: 'light',
