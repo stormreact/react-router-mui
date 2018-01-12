@@ -10,17 +10,6 @@ import getPageContext, { getTheme } from './../styles/getPageContext';
 import AppFrame from './AppFrame';
 import { lightTheme, darkTheme, setPrismTheme } from './../utils/prism';
 
-// Inject the insertion-point-jss after docssearch
-if (process.browser && !global.__INSERTION_POINT__) {
-  global.__INSERTION_POINT__ = true;
-  const styleNode = document.createComment('insertion-point-jss');
-  const docsearchStylesSheet = document.querySelector('#insertion-point-jss');
-
-  if (document.head && docsearchStylesSheet) {
-    document.head.insertBefore(styleNode, docsearchStylesSheet.nextSibling);
-  }
-}
-
 class AppWrapper extends React.Component {
   componentWillMount() {
     this.pageContext = this.props.pageContext || getPageContext();
