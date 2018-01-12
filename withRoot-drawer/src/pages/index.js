@@ -4,11 +4,17 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../withRoot';
+import AppDrawer from './../components/AppDrawer'
 
 const styles = theme => ({
   root: {
     textAlign: 'center',
     paddingTop: theme.spacing.unit * 20,
+  },
+  drawer: {
+    [theme.breakpoints.up('lg')]: {
+      width: 250,
+    },
   },
 });
 

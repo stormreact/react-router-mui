@@ -8,9 +8,8 @@ import Drawer from 'material-ui/Drawer';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
-import AppDrawerNavItem from 'docs/src/modules/components/AppDrawerNavItem';
-import Link from 'docs/src/modules/components/Link';
-import { pageToTitle } from 'docs/src/modules/utils/helpers';
+import AppDrawerNavItem from './AppDrawerNavItem';
+import { pageToTitle } from './../utils/helpers';
 
 const styles = theme => ({
   paper: {
@@ -79,8 +78,6 @@ function reduceChildRoutes(props, activePage, items, childPage, index) {
   return items;
 }
 
-const GITHUB_RELEASE_BASE_URL = 'https://github.com/mui-org/material-ui/releases/tag/';
-
 function AppDrawer(props, context) {
   const { classes, className, disablePermanent, mobileOpen, onClose } = props;
 
@@ -88,19 +85,9 @@ function AppDrawer(props, context) {
     <div className={classes.nav}>
       <div className={classes.toolbarIe11}>
         <Toolbar className={classes.toolbar}>
-          <Link className={classes.title} href="/" onClick={onClose}>
-            <Typography type="title" gutterBottom color="inherit">
-              Material-UI
-            </Typography>
-          </Link>
-          {process.env.MATERIAL_UI_VERSION ? (
-            <Link
-              className={classes.anchor}
-              href={`${GITHUB_RELEASE_BASE_URL}v${process.env.MATERIAL_UI_VERSION}`}
-            >
-              <Typography type="caption">{`v${process.env.MATERIAL_UI_VERSION}`}</Typography>
-            </Link>
-          ) : null}
+          <Typography type="title" gutterBottom color="inherit">
+            Material-UI
+          </Typography>
           <Divider absolute />
         </Toolbar>
       </div>
