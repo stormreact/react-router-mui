@@ -14,3 +14,12 @@ inside Index that is able to
 ```
 console.log(this.context.activePage);
 ```
+
+### withRoot-drawer
+
+This is the complete create-react stack up and running on:
+
+* AppWrapper
+* AppFrame
+* AppDrawer
+* AppDrawerNavItem
