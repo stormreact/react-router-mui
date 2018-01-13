@@ -70,7 +70,6 @@ class AppDrawerNavItem extends React.Component {
           <Button
             variant="button"
             href={href}
-            activeClassName={classes.activeButton}
             className={classNames(classes.button, classes.navLinkButton)}
             disableRipple
             onClick={this.props.onClick}
