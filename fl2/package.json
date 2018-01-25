@@ -5,12 +5,13 @@
   "dependencies": {
     "jss": "latest",
     "material-ui": "next",
+    "material-ui-icons": "1.0.0-beta.17",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-jss": "latest",
     "react-scripts": "latest",
-    "react-router-dom": "latest"    
+    "react-router-dom": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
