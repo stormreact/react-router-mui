@@ -68,7 +68,6 @@ class Index extends React.Component {
           is green and warm...
         </Typography>
 
-
         <Router>
           <div style={{ display: 'flex' }}>
 
@@ -157,11 +156,6 @@ class Index extends React.Component {
 
           </div>
         </Router>
-
-
-
-
-
 
       </div>
     );
