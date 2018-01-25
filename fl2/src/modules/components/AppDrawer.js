@@ -9,8 +9,6 @@ import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
 import AppDrawerNavItem from './AppDrawerNavItem';
-//import Link from './Link';
-import { Link } from 'react-router-dom'
 import { pageToTitle } from './../utils/helpers';
 
 const styles = theme => ({
@@ -89,19 +87,6 @@ function AppDrawer(props, context) {
     <div className={classes.nav}>
       <div className={classes.toolbarIe11}>
         <Toolbar className={classes.toolbar}>
-          <Link className={classes.title} href="/" onClick={onClose}>
-            <Typography type="title" gutterBottom color="inherit">
-              Material-UI
-            </Typography>
-          </Link>
-          {process.env.MATERIAL_UI_VERSION ? (
-            <Link
-              className={classes.anchor}
-              href={`${GITHUB_RELEASE_BASE_URL}v${process.env.MATERIAL_UI_VERSION}`}
-            >
-              <Typography type="caption">{`v${process.env.MATERIAL_UI_VERSION}`}</Typography>
-            </Link>
-          ) : null}
           <Divider absolute />
         </Toolbar>
       </div>
