@@ -9,7 +9,8 @@ import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
 import AppDrawerNavItem from './AppDrawerNavItem';
-import Link from './Link';
+//import Link from './Link';
+import { Link } from 'react-router-dom'
 import { pageToTitle } from './../utils/helpers';
 
 const styles = theme => ({
