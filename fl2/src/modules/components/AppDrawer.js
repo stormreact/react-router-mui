@@ -8,9 +8,9 @@ import Drawer from 'material-ui/Drawer';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
-import AppDrawerNavItem from 'docs/src/modules/components/AppDrawerNavItem';
-import Link from 'docs/src/modules/components/Link';
-import { pageToTitle } from 'docs/src/modules/utils/helpers';
+import AppDrawerNavItem from './AppDrawerNavItem';
+import Link from './Link';
+import { pageToTitle } from './../utils/helpers';
 
 const styles = theme => ({
   paper: {
