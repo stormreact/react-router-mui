@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "jss": "latest",
+    "lodash": "latest",
     "material-ui": "next",
     "material-ui-icons": "1.0.0-beta.17",
     "prop-types": "latest",
