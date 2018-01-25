@@ -5,7 +5,6 @@ import { withStyles } from 'material-ui/styles';
 import List from 'material-ui/List';
 import Toolbar from 'material-ui/Toolbar';
 import Drawer from 'material-ui/Drawer';
-import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
 import AppDrawerNavItem from './AppDrawerNavItem';
@@ -77,8 +76,6 @@ function reduceChildRoutes(props, activePage, items, childPage, index) {
 
   return items;
 }
-
-const GITHUB_RELEASE_BASE_URL = 'https://github.com/mui-org/material-ui/releases/tag/';
 
 function AppDrawer(props, context) {
   const { classes, className, disablePermanent, mobileOpen, onClose } = props;
