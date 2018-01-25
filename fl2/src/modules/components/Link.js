@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Link as NextLink } from 'react-router-dom'
-// import NextLink from 'next/link';
+// import { Link as NextLink } from 'react-router-dom'
+import NextLink from 'next/link';
 
 import { withStyles } from 'material-ui/styles';
 import { capitalize } from 'material-ui/utils/helpers';

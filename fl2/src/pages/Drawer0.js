@@ -15,6 +15,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import AppDrawer from './../modules/components/AppDrawer';
+
 const styles = theme => ({
   root: {
     textAlign: 'center',
@@ -60,6 +62,14 @@ const routes2 = [
 
 class Index extends React.Component {
 
+  state = {
+    mobileOpen: false,
+  };
+
+  handleDrawerToggle = () => {
+    this.setState({ mobileOpen: !this.state.mobileOpen });
+  };
+
   render() {
     const { classes } = this.props;
     const title = 'Hola from Florida'
@@ -87,6 +97,12 @@ class Index extends React.Component {
 
           </Toolbar>
         </AppBar>
+
+        <AppDrawer
+          className={classes.drawer}
+          onClose={this.handleDrawerToggle}
+          mobileOpen={this.state.mobileOpen}
+        />
 
         <Typography type="display1" gutterBottom>
           Florida
