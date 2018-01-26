@@ -60,6 +60,55 @@ const routes2 = [
   }
 ]
 
+const pages = [
+  {
+    pathname: '/ch1',
+    children: [
+      {
+        pathname: '/ch1/sec1',
+      },
+      {
+        pathname: '/ch1/sec2',
+      },
+      {
+        pathname: '/ch1/sec3',
+      },
+    ],
+  },
+  {
+    pathname: '/ch2',
+    children: [
+      {
+        pathname: '/ch2/sec1',
+      },
+      {
+        pathname: '/ch2/sec2',
+      },
+      {
+        pathname: '/ch2/sec3',
+      },
+    ],
+  },
+  {
+    pathname: '/ch3',
+    children: [
+      {
+        pathname: '/ch3/sec1',
+      },
+      {
+        pathname: '/ch3/sec2',
+      },
+      {
+        pathname: '/ch3/sec3',
+      },
+    ],
+  },
+  {
+    pathname: '/',
+    title: false,
+  },
+];
+
 class Index extends React.Component {
 
   state = {
