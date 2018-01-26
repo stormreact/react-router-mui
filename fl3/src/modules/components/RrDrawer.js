@@ -78,7 +78,7 @@ function reduceChildRoutes(props, activePage, items, childPage, index) {
 }
 
 function AppDrawer(props, context) {
-  const { classes, className, disablePermanent, mobileOpen, onClose } = props;
+  const { classes, className, disablePermanent, mobileOpen, onClose, pages } = props;
 
   const drawer = (
     <div className={classes.nav}>
@@ -87,7 +87,7 @@ function AppDrawer(props, context) {
           <Divider absolute />
         </Toolbar>
       </div>
-      {renderNavItems(props, context.pages, context.activePage)}
+      {renderNavItems(props, pages, context.activePage)}
     </div>
   );
 
