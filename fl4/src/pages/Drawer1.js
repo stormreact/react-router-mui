@@ -151,7 +151,7 @@ class Index extends React.Component {
           className={classes.drawer}
           onClose={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
-          
+          pages={pages}
         />
 
         <Typography type="display1" gutterBottom>
