@@ -15,7 +15,7 @@ import {
   Link
 } from 'react-router-dom'
 
-import AppDrawer from './../modules/components/RrDrawer';
+import AppDrawer from './../modules/components/AppDrawer';
 
 const styles = theme => ({
   root: {
@@ -151,7 +151,6 @@ class Index extends React.Component {
           className={classes.drawer}
           onClose={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
-          pages={pages}
         />
 
         <Typography type="display1" gutterBottom>
