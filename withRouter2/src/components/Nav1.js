@@ -1,7 +1,15 @@
-import React, { Component } from 'react';
-import { Link, Router, withRouter } from 'react-router-dom';
 
-class Nav extends Component {
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom'
+
+
+class Nav extends React.Component {
 
   componentWillMount() {
     // will trigger the callback function whenever a new Route renders a component(as long as this component stays mounted as routes change)
@@ -22,4 +30,4 @@ class Nav extends Component {
   }
 }
 
-export default withRouter(Nav);
+export default Nav;
