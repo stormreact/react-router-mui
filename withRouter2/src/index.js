@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Auth from './components/NavTop';
+import Example from './components/NavTop';
 
 render((
-  <Auth />
+  <Example />
 ), document.getElementById('root'));
