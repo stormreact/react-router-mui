@@ -16,9 +16,11 @@ class Nav extends React.Component {
   render() {
     return (
       <div>
-          <Link to='/todos/new'>Create New Todo</Link>
-          <Link to='/todos/2'>Show A Todo</Link>
-          <Link to='/'>View All Todos</Link>
+        <ul>
+          <li><Link to='/todos/new'>Create New Todo</Link></li>
+          <li><Link to='/todos/2'>Show A Todo</Link></li>
+          <li><Link to='/'>View All Todos</Link></li>
+        </ul>
       </div>
     );
   }
