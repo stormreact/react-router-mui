@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
@@ -38,7 +37,6 @@ class SidebarExample extends React.Component {
   render() {
     return (
 
-  <Router>
     <div style={{ display: 'flex' }}>
       <div style={{
         padding: '10px',
@@ -81,7 +79,6 @@ class SidebarExample extends React.Component {
         ))}
       </div>
     </div>
-  </Router>
 )};
 }
 
