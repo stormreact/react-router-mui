@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './pages/Drawer2';
+import Index from './Router';
 
 ReactDOM.render(<Index />, document.querySelector('#root'));
