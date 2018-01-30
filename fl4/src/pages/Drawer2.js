@@ -7,6 +7,8 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
+
+import find from 'lodash/find';
 import withRoot from '../withRoot';
 
 /*
@@ -75,11 +77,41 @@ const pages = [
   },
 ];
 
+function findActivePage(currentPages, url) {
+  const activePage = find(currentPages, page => {
+    if (page.children) {
+      return url.pathname.indexOf(page.pathname) === 0;
+    }
+
+    // Should be an exact match if no children
+    return url.pathname === page.pathname;
+  });
+
+  if (!activePage) {
+    return null;
+  }
+
+  // We need to drill down
+  if (activePage.pathname !== url.pathname) {
+    return findActivePage(activePage.children, url);
+  }
+
+  return activePage;
+}
+
 class Index extends React.Component {
 
   state = {
     mobileOpen: false,
   };
+
+  getChildContext() {
+    return {
+      url: this.props.url ? this.props.url : null,
+      pages,
+      activePage: findActivePage(pages, this.props.url),
+    };
+  }
 
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
@@ -132,6 +164,12 @@ class Index extends React.Component {
 
 Index.propTypes = {
   classes: PropTypes.object.isRequired,
+};
+
+Index.childContextTypes = {
+  url: PropTypes.object,
+  pages: PropTypes.array,
+  activePage: PropTypes.object,
 };
 
 export default withRoot(withStyles(styles)(Index));
