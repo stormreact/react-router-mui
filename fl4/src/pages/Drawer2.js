@@ -160,7 +160,6 @@ class Index extends React.Component {
           has 20 million people...
         </Typography>
 
-        <Router>
           <div style={{ display: 'flex' }}>
 
             <div style={{
@@ -245,10 +244,7 @@ class Index extends React.Component {
                 />
               ))}
             </div>
-
           </div>
-        </Router>
-
       </div>
     );
   }
