@@ -11,6 +11,8 @@ import { withStyles } from 'material-ui/styles';
 import find from 'lodash/find';
 import withRoot from '../withRoot';
 
+import { Route } from 'react-router-dom'
+
 /*
 import {
   BrowserRouter as Router,
@@ -97,6 +99,12 @@ function findActivePage(currentPages, url) {
   }
 
   return activePage;
+}
+
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello {this.props.pathname}</h1>;
+  }
 }
 
 class Index extends React.Component {
@@ -187,6 +195,21 @@ class Index extends React.Component {
         <Typography type="subheading" gutterBottom>
           has 20 million people...
         </Typography>
+
+        <div style={{ flex: 1, padding: '10px' }}>
+          {pages.map((route, index) => (
+
+            // console.log("route = ", route),
+
+            <Route
+              key={index}
+              path={route.pathname}
+              exact={route.exact}
+              component={Greeting}
+            />
+
+          ))}
+        </div>
 
       </div>
     );
