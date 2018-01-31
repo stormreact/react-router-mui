@@ -187,6 +187,7 @@ class Index extends React.Component {
           className={classes.drawer}
           onClose={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
+          disablePermanent={false}
         />
 
         <Typography type="display1" gutterBottom>
