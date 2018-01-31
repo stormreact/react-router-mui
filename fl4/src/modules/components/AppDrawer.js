@@ -48,6 +48,9 @@ function renderNavItems(props, pages, activePage) {
 }
 
 function reduceChildRoutes(props, activePage, items, childPage, index) {
+
+  console.log("here = ",activePage);
+
   if (childPage.children && childPage.children.length > 1) {
     const openImmediately = activePage.pathname.indexOf(childPage.pathname) !== -1 || false;
 

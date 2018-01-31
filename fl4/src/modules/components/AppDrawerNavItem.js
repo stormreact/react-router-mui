@@ -69,7 +69,8 @@ class AppDrawerNavItem extends React.Component {
       return (
         <ListItem className={classes.navLink} disableGutters>
           <Button
-            component={Link} to="${href}"
+            component={Link}
+            to={href}
             variant="button"
             href={href}
             activeClassName={classes.activeButton}
