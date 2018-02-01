@@ -12,15 +12,6 @@ import find from 'lodash/find';
 import withRoot from '../withRoot';
 
 import { Route } from 'react-router-dom'
-
-/*
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
-*/
-
 import AppDrawer from './../modules/components/AppDrawer';
 
 const styles = theme => ({
@@ -101,7 +92,7 @@ function findActivePage(currentPages, url) {
   return activePage;
 }
 
-const Child = ({ match }) => (
+const ShowChapterSection = ({ match }) => (
   <div>
     <h3>Chapter: {match.params.ch}</h3>
     <h4>Section: {match.params.sec}</h4>
@@ -198,12 +189,10 @@ class Index extends React.Component {
         </Typography>
 
         <div style={{ flex: 1, padding: '10px' }}>
-
             <Route
               path="/:ch/:sec"
-              component={Child}
+              component={ShowChapterSection}
             />
-
         </div>
 
       </div>
