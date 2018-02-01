@@ -118,7 +118,6 @@ class Index extends React.Component {
 
     let myurl = {};
     myurl.pathname = this.props.history.location.pathname
-    console.log(myurl);
 
     return {
       url: myurl ? myurl : null,
