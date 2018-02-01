@@ -11,7 +11,7 @@ import { withStyles } from 'material-ui/styles';
 import find from 'lodash/find';
 import withRoot from '../withRoot';
 
-import { Link, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 /*
 import {
@@ -101,45 +101,10 @@ function findActivePage(currentPages, url) {
   return activePage;
 }
 
-/*
-class Greeting extends React.Component {
-  render() {
-    return <h1>Hello {this.props.pathname}</h1>;
-  }
-}
-*/
-
-const Topics = ({ match }) => (
+const Child = ({ match }) => (
   <div>
-    <h2>Topics</h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/components`}>
-          Components
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
-        </Link>
-      </li>
-    </ul>
-
-    <Route path={`${match.url}/:topicId`} component={Topic}/>
-    <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
-    )}/>
-  </div>
-)
-
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
+    <h3>Chapter: {match.params.ch}</h3>
+    <h4>Section: {match.params.sec}</h4>
   </div>
 )
 
@@ -234,17 +199,12 @@ class Index extends React.Component {
         </Typography>
 
         <div style={{ flex: 1, padding: '10px' }}>
-          {pages.map((route, index) => (
-
-            // console.log("route = ", route),
 
             <Route
-              key={index}
-              path={route.pathname}
-              component={Topics}
+              path="/:ch/:sec"
+              component={Child}
             />
 
-          ))}
         </div>
 
       </div>
