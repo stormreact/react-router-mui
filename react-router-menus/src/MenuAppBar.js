@@ -22,12 +22,7 @@ const styles = {
 
 class MenuAppBar extends React.Component {
   state = {
-    auth: true,
     anchorEl: null,
-  };
-
-  handleChange = (event, checked) => {
-    this.setState({ auth: checked });
   };
 
   handleMenu = event => {
@@ -40,7 +35,7 @@ class MenuAppBar extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
+    const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
 
     return (
