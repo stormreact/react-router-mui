@@ -1,15 +1,16 @@
 {
-  "name": "materialui-react-router-bug",
-  "description": "Small example of a bug for Material UI .",
-  "version": "0.0.0",
+  "name": "react-router-tabs",
+  "description": "React router tabs",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "react-router-dom": "4.2.2",
-    "react-dom": "16.0.0",
-    "react": "16.0.0",
-    "material-ui-next": "1.0.0-beta.30"
+    "@material-ui/core": "^1.2.1",
+    "react": "16.4.0",
+    "react-dom": "16.4.0",
+    "react-router-dom": "4.3.1"
   },
   "devDependencies": {
-    "react-scripts": "1.0.0"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
