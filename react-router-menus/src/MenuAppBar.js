@@ -46,7 +46,12 @@ class MenuAppBar extends React.Component {
               Title
             </Typography>
               <div>
-                <Typography>
+                <Typography
+                  aria-owns={open ? 'menu-appbar' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleMenu}
+                  color="inherit"
+                >
                   Menu
                 </Typography>
                 <Menu
