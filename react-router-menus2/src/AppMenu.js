@@ -92,13 +92,27 @@ class MenuAppBar extends React.Component {
                 onClose={this.handleClose}
               >
                 <MenuItem onClick={this.handleClose}>
-                  <Link to="/">Home</Link>
+                  <Link
+                    style={{ "text-decoration": "none" }}
+                    className={classes.link}
+                    to="/"
+                  >
+                    Home
+                  </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link to="/sec1">Sec 1</Link>
+                  <Link
+                    style={{ "text-decoration": "none" }}
+                    className={classes.link}
+                    to="/sec1"
+                  >
+                    Sec 1
+                  </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link to="/sec2">Sec 2</Link>
+                  <Link style={{ "text-decoration": "none" }} to="/sec2">
+                    Sec 2
+                  </Link>
                 </MenuItem>
               </Menu>
             </div>
