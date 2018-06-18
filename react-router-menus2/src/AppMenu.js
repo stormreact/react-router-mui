@@ -69,8 +69,8 @@ class MenuAppBar extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem component={MenuItemComponent}>Sec 1</MenuItem>
-                  <MenuItem component={MenuItemComponent}>Sec 2</MenuItem>
+                  <MenuItem onClick={this.handleClose}>Sec 1</MenuItem>
+                  <MenuItem onClick={this.handleClose}>Sec 2</MenuItem>
                 </Menu>
               </div>
           </Toolbar>
