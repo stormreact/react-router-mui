@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import MenuItemComponent from './MenuItemComponent';
 
 const styles = {
   root: {
@@ -68,8 +69,8 @@ class MenuAppBar extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <MenuItem component={MenuItemComponent}>Sec 1</MenuItem>
+                  <MenuItem component={MenuItemComponent}>Sec 2</MenuItem>
                 </Menu>
               </div>
           </Toolbar>
