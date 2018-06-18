@@ -18,6 +18,9 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  link: {
+    "text-decoration": "none"
   }
 };
 
@@ -92,25 +95,17 @@ class MenuAppBar extends React.Component {
                 onClose={this.handleClose}
               >
                 <MenuItem onClick={this.handleClose}>
-                  <Link
-                    style={{ "text-decoration": "none" }}
-                    className={classes.link}
-                    to="/"
-                  >
+                  <Link className={classes.link} to="/">
                     Home
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link
-                    style={{ "text-decoration": "none" }}
-                    className={classes.link}
-                    to="/sec1"
-                  >
+                  <Link className={classes.link} to="/sec1">
                     Sec 1
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link style={{ "text-decoration": "none" }} to="/sec2">
+                  <Link className={classes.link} to="/sec2">
                     Sec 2
                   </Link>
                 </MenuItem>
