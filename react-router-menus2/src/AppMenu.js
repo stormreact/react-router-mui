@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuItemComponent from './MenuItemComponent';
+import { Route, Link } from "react-router-dom";
 
 const styles = {
   root: {
@@ -69,8 +70,8 @@ class MenuAppBar extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Sec 1</MenuItem>
-                  <MenuItem onClick={this.handleClose}>Sec 2</MenuItem>
+                  <MenuItem onClick={<Link to="/sec1">Sec 1</Link>}>Sec 1</MenuItem>
+                  <MenuItem onClick={<Link to="/sec2">Sec 2</Link>}>Sec 2</MenuItem>
                 </Menu>
               </div>
           </Toolbar>
