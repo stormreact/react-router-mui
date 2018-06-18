@@ -20,7 +20,7 @@ const styles = {
     marginRight: 20
   },
   link: {
-    "text-decoration": "none"
+    textDecoration: "none"
   }
 };
 
