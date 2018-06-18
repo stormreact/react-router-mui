@@ -22,6 +22,24 @@ const styles = {
   },
 };
 
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
+
+const Sec1 = () => (
+  <div>
+    <h2>Section 1</h2>
+  </div>
+);
+
+const Sec2 = () => (
+  <div>
+    <h2>Section 2</h2>
+  </div>
+);
+
 class MenuAppBar extends React.Component {
   state = {
     anchorEl: null,
@@ -74,8 +92,21 @@ class MenuAppBar extends React.Component {
                   <MenuItem onClick={<Link to="/sec2">Sec 2</Link>}>Sec 2</MenuItem>
                 </Menu>
               </div>
+
+
+
+
+
           </Toolbar>
         </AppBar>
+
+        <div>
+        <Route exact path="/" component={Home} />
+        <Route path="/sec1" component={Sec1} />
+        <Route path="/sec2" component={Sec2} />
+        </div>
+
+
       </div>
     );
   }
