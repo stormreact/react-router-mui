@@ -88,8 +88,9 @@ class MenuAppBar extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem><Link to="/sec1">Sec 1></Link>>Sec 1</MenuItem>
-                  <MenuItem><Link to="/sec2">Sec 2></Link>>Sec 2</MenuItem>
+                  <MenuItem><Link to="/">Home</Link></MenuItem>
+                  <MenuItem><Link to="/sec1">Sec 1</Link></MenuItem>
+                  <MenuItem><Link to="/sec2">Sec 2</Link></MenuItem>
                 </Menu>
               </div>
 
