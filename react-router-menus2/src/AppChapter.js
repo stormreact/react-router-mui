@@ -56,6 +56,17 @@ const ShowChapterSection = ({ match }) => (
   </div>
 )
 
+const GetParamsFromMatch = (match) => {
+
+  //const regex = "/\\w*/\\w*";
+  const url = match.url;
+  //console.log(url);
+
+  let result = url.split("/");
+  let ary = [result[1],result[2]];
+  console.log(ary);
+  return ary;
+}
 
 
 // A simple component that shows the pathname of the current location
@@ -67,17 +78,23 @@ class ShowTheLocation extends React.Component {
   }
 
   render() {
-
-
     const { match, location, history } = this.props
 
-    console.log(match);
+    const result = GetParamsFromMatch(match);
 
     return (
       <div>
-      <div>You are now at {location.pathname}</div>
-      <div>{match.params.keys}</div>
+      <div>{result[0]}</div>
+      <div>{result[1]}</div>
+
+
+      
+      <h3>Chapter: {result[0]}</h3>
+      <h4>Section: {result[1]}</h4>
       </div>
+
+
+
     )
   }
 }
