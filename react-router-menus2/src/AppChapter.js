@@ -30,44 +30,12 @@ const Home = () => (
   </div>
 );
 
-const Sec1 = () => (
-  <div>
-    <h2>Section 1</h2>
-  </div>
-);
-
-const Sec2 = () => (
-  <div>
-    <h2>Section 2</h2>
-  </div>
-);
-
-const Sec3 = () => (
-  <div>
-    <h2>Section 3</h2>
-  </div>
-);
-
-
-const ShowChapterSection = ({ match }) => (
-  <div>
-    <h3>Chapter: {match.params.ch}</h3>
-    <h4>Section: {match.params.sec}</h4>
-  </div>
-)
-
-const GetParamsFromMatch = (match) => {
-
-  //const regex = "/\\w*/\\w*";
+const GetParamsFromMatch = match => {
   const url = match.url;
-  //console.log(url);
-
   let result = url.split("/");
-  let ary = [result[1],result[2]];
-  console.log(ary);
+  let ary = [result[1], result[2]];
   return ary;
-}
-
+};
 
 // A simple component that shows the pathname of the current location
 class ShowTheLocation extends React.Component {
@@ -75,27 +43,22 @@ class ShowTheLocation extends React.Component {
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired
-  }
+  };
 
   render() {
-    const { match, location, history } = this.props
+    // leave next line here just to show what props
+    // from the react-router are actually available
+    // const { match, location, history } = this.props
+    const { match } = this.props;
 
     const result = GetParamsFromMatch(match);
 
     return (
       <div>
-      <div>{result[0]}</div>
-      <div>{result[1]}</div>
-
-
-      
-      <h3>Chapter: {result[0]}</h3>
-      <h4>Section: {result[1]}</h4>
+        <h3>Chapter: {result[0]}</h3>
+        <h4>Section: {result[1]}</h4>
       </div>
-
-
-
-    )
+    );
   }
 }
 
@@ -178,8 +141,8 @@ class MenuAppBar extends React.Component {
 
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/ch1/sec1" component={Sec1} />
-          <Route path="/ch1/sec2" component={Sec2} />
+          <Route path="/ch1/sec1" component={ShowTheLocation} />
+          <Route path="/ch1/sec2" component={ShowTheLocation} />
           <Route path="/ch1/sec3" component={ShowTheLocation} />
         </div>
       </div>
