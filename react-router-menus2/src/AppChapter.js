@@ -48,6 +48,40 @@ const Sec3 = () => (
   </div>
 );
 
+
+const ShowChapterSection = ({ match }) => (
+  <div>
+    <h3>Chapter: {match.params.ch}</h3>
+    <h4>Section: {match.params.sec}</h4>
+  </div>
+)
+
+
+
+// A simple component that shows the pathname of the current location
+class ShowTheLocation extends React.Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  }
+
+  render() {
+
+
+    const { match, location, history } = this.props
+
+    console.log(match);
+
+    return (
+      <div>
+      <div>You are now at {location.pathname}</div>
+      <div>{match.params.keys}</div>
+      </div>
+    )
+  }
+}
+
 class MenuAppBar extends React.Component {
   state = {
     anchorEl: null
@@ -129,7 +163,7 @@ class MenuAppBar extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/ch1/sec1" component={Sec1} />
           <Route path="/ch1/sec2" component={Sec2} />
-          <Route path="/ch1/sec3" component={Sec3} />
+          <Route path="/ch1/sec3" component={ShowTheLocation} />
         </div>
       </div>
     );
