@@ -1,4 +1,4 @@
 
-This repo is in transition...
+#### react-router-menus2
 
-Stay tuned as I document more what is going on here...
+* AppChapter does the string split on the chapter and section
