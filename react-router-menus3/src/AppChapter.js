@@ -75,7 +75,6 @@ class MenuAppBar extends React.Component {
   };
 
   handleChange(keychange) {
-    console.log(keychange);
     this.setState({ selectedKey: keychange });
   }
 
