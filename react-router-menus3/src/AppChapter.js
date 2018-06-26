@@ -67,12 +67,12 @@ class MenuAppBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-  }
+    this.state = {
+      anchorEl: null,
+      selectedKey: "ch1"
+    };
 
-  state = {
-    anchorEl: null,
-    selectedKey: "ch1"
-  };
+  }
 
   handleChange(keychange) {
     this.setState({ selectedKey: keychange });
