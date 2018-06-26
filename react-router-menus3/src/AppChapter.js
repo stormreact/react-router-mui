@@ -64,7 +64,8 @@ class ShowTheLocation extends React.Component {
 
 class MenuAppBar extends React.Component {
   state = {
-    anchorEl: null
+    anchorEl: null,
+    selectedKey: "ch1"
   };
 
   handleMenu = event => {
@@ -77,7 +78,7 @@ class MenuAppBar extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { anchorEl } = this.state;
+    const { anchorEl, selectedKey } = this.state;
     const open = Boolean(anchorEl);
 
     return (
@@ -141,9 +142,9 @@ class MenuAppBar extends React.Component {
 
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/ch1/sec1" component={ShowTheLocation} />
-          <Route path="/ch1/sec2" component={ShowTheLocation} />
-          <Route path="/ch1/sec3" component={ShowTheLocation} />
+          <Route path={`/${selectedKey}/sec1`} component={ShowTheLocation} />
+          <Route path={`/${selectedKey}/sec2`} component={ShowTheLocation} />
+          <Route path={`/${selectedKey}/sec3`} component={ShowTheLocation} />
         </div>
       </div>
     );
