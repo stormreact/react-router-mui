@@ -121,17 +121,17 @@ class MenuAppBar extends React.Component {
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to="/ch1/sec1">
+                  <Link className={classes.link} to={{pathname: `/${selectedKey}/sec1`}}>
                     Sec 1
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to="/ch1/sec2">
+                  <Link className={classes.link} to={{pathname: `/${selectedKey}/sec2`}}>
                     Sec 2
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to="/ch1/sec3">
+                  <Link className={classes.link} to={{pathname: `/${selectedKey}/sec3`}}>
                     Sec 3
                   </Link>
                 </MenuItem>
