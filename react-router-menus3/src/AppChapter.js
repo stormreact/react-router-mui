@@ -64,7 +64,6 @@ class ShowTheLocation extends React.Component {
 }
 
 class MenuAppBar extends React.Component {
-
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -77,7 +76,7 @@ class MenuAppBar extends React.Component {
 
   handleChange(keychange) {
     console.log(keychange);
-    this.setState({selectedKey: keychange});
+    this.setState({ selectedKey: keychange });
   }
 
   handleMenu = event => {
@@ -133,17 +132,26 @@ class MenuAppBar extends React.Component {
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{pathname: `/${selectedKey}/sec1`}}>
+                  <Link
+                    className={classes.link}
+                    to={{ pathname: `/${selectedKey}/sec1` }}
+                  >
                     Sec 1
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{pathname: `/${selectedKey}/sec2`}}>
+                  <Link
+                    className={classes.link}
+                    to={{ pathname: `/${selectedKey}/sec2` }}
+                  >
                     Sec 2
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{pathname: `/${selectedKey}/sec3`}}>
+                  <Link
+                    className={classes.link}
+                    to={{ pathname: `/${selectedKey}/sec3` }}
+                  >
                     Sec 3
                   </Link>
                 </MenuItem>
@@ -156,7 +164,7 @@ class MenuAppBar extends React.Component {
           <Picker
             value={selectedKey}
             onChange={this.handleChange}
-            options={["ch1","ch2"]}
+            options={["ch1", "ch2"]}
           />
         </div>
 
