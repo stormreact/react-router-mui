@@ -40,16 +40,14 @@ const GetParamsFromMatch = match => {
 
 // A simple component that shows the pathname of the current location
 class ShowTheLocation extends React.Component {
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
-  };
 
   render() {
     // leave next line here just to show what props
     // from the react-router are actually available
     // const { match, location, history } = this.props
+
+    console.log("ShowTheLocation");
+
     const { match } = this.props;
 
     const result = GetParamsFromMatch(match);
